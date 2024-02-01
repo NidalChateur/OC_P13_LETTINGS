@@ -16,65 +16,69 @@
   <img src="./home/static/assets/img/icon.png" alt="icon">
 </p>
 
+## 1. Read the docs
 
+<a href="https://oc-p13-lettings.readthedocs.io/en/latest/index.html">Documentation</a>
 
+## 2. Install and run with poetry
 
-## Lancer l'application avec Docker
+####  0. Informations
 
-####  1. Installer Docker si ce n'est pas déjà fait
-- https://docs.docker.com/get-docker/ 
+- Locally, no environment variable is required.
 
-#### 2. Ouvrir un terminal et vérifier que Docker soit bien installé
-- `docker --version`
+- oc_letting_site.settings.local.py is active to avoid Sentry logs and environment variables.
 
-####  3. Lancer l'application
-- lancer l'app en premier plan
-    - `docker run -p 8000:8000 nidalchateur/oc_lettings_site`
+####  1. Install dependencies
 
-- lancer l'app en arrière plan
-    - `docker run -d -p 8000:8000 nidalchateur/oc_lettings_site`
+- `python -m pip install pip==23.3.2`
+- `pip install poetry==1.7.1`
+- `poetry install`
 
-- ouvrir le shell du conteneur
-    - `docker run -it nidalchateur/oc_lettings_site /bin/bash`
+####  2. Run
 
-#### 4. Stopper l'application
+- `poetry run python manage.py migrate`
+- `poetry run python manage.py runserver`
 
-1. Lister les conteneurs en cours d'execution
+## 3. Run the app with Docker Compose
 
-    - `docker ps`
-
-2. Stopper le conteneur en cours d’exécution
-
-    - `docker stop container_id`
-
-4. Nettoyer le système
-
-    - `docker system prune`
-
-5. Supprimer l'image 
-
-    - `docker rmi nidalchateur/oc_lettings_site`
-
-6. Verifier que l'image a bien été supprimée
-
-    - `docker images`
-
-
-## Lancer l'application avec Docker Compose
-
-####  1. Installer Docker si ce n'est pas déjà fait
+####  1. Installer Docker 
 
 - https://docs.docker.com/get-docker/ 
 
-#### 2. Ouvrir un terminal et vérifier que Docker soit bien installé
+#### 2. Open shell and check Docker Compose version
 
 - `docker compose version`
 
-####  3. Lancer l'application
-- lancer l'app en premier plan
+####  3. Run
 
-    - `docker compose up`
+- `docker compose up`
 
-#### 4. Stopper l'application
+#### 4. Stop and clean system
 
 - `docker compose down`
+
+## CircleCI : pipeline config
+
+####  Informations
+
+- oc_letting_site.settings.local.py is active to avoid Sentry logs.
+
+- Set these environment variables on the project settings :
+    1. RENDER_DEPLOY_HOOK_URL (acquired from Render Web Service)
+    2. DOCKERHUB_USERNAME (acquired from Docker hub)
+    3. DOCKERHUB_PASSWORD (acquired from Docker hub)
+
+
+## Render : web service config
+
+####  Informations
+
+- oc_letting_site.settings.production.py is active !
+
+- Set these environment variables on the Web Service :
+    1. SECRET_KEY (generated on Render Web Service),
+    2. PYTHON_VERSION=3.10.11
+    3. DJANGO_SETTINGS_MODULE=oc_lettings_site.settings.production
+    4. DATABASE_URL (acquired from Render PostgreSQL)
+    5. SENTRY_DSN (acquired from Sentry)
+    6. ADMIN_PASSWORD (chosen on Render Web Service)
