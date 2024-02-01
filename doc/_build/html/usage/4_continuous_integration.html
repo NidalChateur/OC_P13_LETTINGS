@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Continuous integration (CI) &#8212; Documentation oc_lettings_site 0.1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=601dbdee" />
+    <script src="../_static/documentation_options.js?v=897fae25"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="5. Continuous delivery (CD)" href="5_continuous_delivery.html" />
+    <link rel="prev" title="Run locally the application with Docker-Compose (quick)" href="docker/2_docker-compose.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="5_continuous_delivery.html" title="5. Continuous delivery (CD)"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="docker/2_docker-compose.html" title="Run locally the application with Docker-Compose (quick)"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4. Continuous integration (CI)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="continuous-integration-ci">
+<h1>4. Continuous integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Link to this heading">¶</a></h1>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li><p>At this step you could comment the job « deploy » on ./circleci/config.yml</p></li>
+<li><p>Fork the repository</p></li>
+<li><p>Sign up to <a class="reference external" href="https://hub.docker.com/">Docker Hub</a>.</p></li>
+<li><p>Sign up to <a class="reference external" href="https://circleci.com/">CircleCI</a></p></li>
+<li><p>CircleCI : Setup your project pipeline by seleting your github repository, you could follow this <a class="reference external" href="https://circleci.com/blog/continuous-integration-for-django-projects/">tutorial</a>.</p></li>
+<li><dl class="simple">
+<dt>CircleCI<span class="classifier">finaly, define your project environment variables in project settings :</span></dt><dd><ul class="simple">
+<li><p><strong>DOCKERHUB_USERNAME</strong> (acquired from Docker hub)</p></li>
+<li><p><strong>DOCKERHUB_PASSWORD</strong> (acquired from Docker hub)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="local-controls-push-to-github">
+<h2>Local controls &gt; Push to github<a class="headerlink" href="#local-controls-push-to-github" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p><strong>1. Local controls before commit and push to github</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>flak8
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>.<span class="w"> </span>--cov-fail-under<span class="o">=</span><span class="m">80</span>
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>up
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>circleci<span class="w"> </span>config<span class="w"> </span>validate
+</pre></div>
+</div>
+<p>if all tests passed, you can commit !</p>
+</div></blockquote>
+<p><strong>3. Commit and push modifications to github</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>.
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;run ci&quot;</span>
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>3. Visite your project pipeline on Circleci</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Check :</dt><dd><ul class="simple">
+<li><p>test ✅</p></li>
+<li><p>build ✅</p></li>
+</ul>
+</dd>
+</dl>
+<p>if you have a fail, open circleci logs to debug then fix the bug locally. After that you could repeat
+local controls &gt; push to github steps.</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4. Continuous integration (CI)</a><ul>
+<li><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li><a class="reference internal" href="#local-controls-push-to-github">Local controls &gt; Push to github</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="docker/2_docker-compose.html"
+                          title="Chapitre précédent">Run locally the application with Docker-Compose (quick)</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="5_continuous_delivery.html"
+                          title="Chapitre suivant">5. Continuous delivery (CD)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/usage/4_continuous_integration.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="5_continuous_delivery.html" title="5. Continuous delivery (CD)"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="docker/2_docker-compose.html" title="Run locally the application with Docker-Compose (quick)"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4. Continuous integration (CI)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Nidal Chateur.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

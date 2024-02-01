@@ -1,0 +1,32 @@
+Run the application with Docker-Compose (quick)
+===============================================
+
+Run, stop and clean system
+--------------------------
+
+    **1. Install Docker Desktop**
+
+        https://docs.docker.com/get-docker/
+
+        .. code-block:: console
+
+            $ docker --version
+            Docker version 24.0.7
+
+            $ docker compose version
+            Docker Compose version v2.23.3-desktop.2
+    
+    **2. Run**
+
+        .. code-block:: console
+
+            $ docker compose up
+        
+
+
+    **3. Stop and clean system**
+
+        .. code-block:: console
+
+            $ docker compose down
+

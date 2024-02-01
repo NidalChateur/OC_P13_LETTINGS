@@ -1,0 +1,18 @@
+6. Continuous delivery (CD)
+===========================
+
+Prerequisite
+------------
+
+    0. Uncomment the "deploy job" on .circleci/config.yml
+
+    1. Sign up to `Sentry <https://sentry.io/welcome/>`_ to get the **SENTRY_DSN**, follow this `tutorial <https://docs.sentry.io/platforms/python/integrations/django/>`_
+
+    2. Sign up to `Render <https://hub.docker.com/>`_.
+
+        4. CircleCI : Go on project settings > 
+
+        - variables d'environnement on circleci
+- variables d'environnement on RENDER
+- (SECRET_KEY, DATABASE_URL, SENTRY_DSN, ADMIN_PASSWORD)
+- sentry settings.production.py
