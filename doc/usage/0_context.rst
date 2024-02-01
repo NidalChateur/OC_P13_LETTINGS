@@ -4,8 +4,8 @@ Context
 1. Specifications
 -----------------
 
-- `App specifications <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/cahier des charges.pdf>`_ 
-- `Doc specifications <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/read the docs.pdf>`_ 
+- `App specifications <https://github.com/NidalChateur/OC_P13_LETTINGS/blob/main/mission/cahier_des_charges.pdf>`_ 
+- `Doc specifications <https://github.com/NidalChateur/OC_P13_LETTINGS/blob/main/mission/read_the_docs.pdf>`_ 
 
 2. Project description
 ----------------------
@@ -14,9 +14,9 @@ Context
 
       1. Addressing various technical debts in the project  
 
-      2. `Dockerize <https://hub.docker.com/repository/docker/nidalchateur/oc_lettings_site/general>`_  
+      2. `Dockerize <https://hub.docker.com/r/nidalchateur/oc_lettings_site>`_  
 
-      3. Implementation of a CI/CD pipeline using `CircleCI <https://app.circleci.com/pipelines/github/NidalChateur/OC_P13_LETTINGS>`_ and deployment on `Render <https://render.com/>`_  
+      3. Implementation of a CI/CD pipeline using `CircleCI <https://dl.circleci.com/status-badge/redirect/gh/NidalChateur/OC_P13_LETTINGS/tree/main>`_ and deployment on `Render <https://render.com/>`_  
 
       4. Monitoring the application and tracking errors through `Sentry <https://sentry.io/>`_  
 

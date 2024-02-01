@@ -63,7 +63,7 @@
 
    **2. Sign up to Render then create your PostgreSQL and Web Service**
 
-      https://render.com/, you could follow this `Render tutorial <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/Déploiement avec Render.pdf>`_
+      https://render.com/, you could follow this `Render tutorial <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/render.pdf>`_
 
       then define environment variables on the Web Service:
          - **SECRET_KEY** (generated on Render Web Service),

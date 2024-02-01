@@ -12,7 +12,7 @@
 
     3. On Render firstly, create your PostgreSQL Database to get your **DATABASE_URL**, save "Internal Database URL" as **DATABASE_URL**. 
 
-    4. On Render, now create your Web Service, you could follow this `Render tutorial <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/Déploiement avec Render.pdf>`_
+    4. On Render, now create your Web Service, you could follow this `Render tutorial <https://github.com/NidalChateur/OC_P13_LETTINGS/mission/render.pdf>`_
 
     5. Then define environment variables on the Render Web Service :
         - **SECRET_KEY** (generated on Render Web Service),
