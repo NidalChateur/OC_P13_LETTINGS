@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    # build: .
+    
+    image: nidalchateur/oc_lettings_site
+    
+    volumes:
+      - .:/code
+      - /db.sqlite3
+    ports:
+      - "8000:8000"
