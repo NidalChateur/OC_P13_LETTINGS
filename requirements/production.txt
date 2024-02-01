@@ -1,0 +1,21 @@
+# python -m pip install pip==23.3.2
+
+# dev requirements
+django
+django-maintenance-mode
+
+# pytest requirements
+pytest
+pytest-django
+pytest-cov
+
+# flake8 requirements
+flake8
+flake8-html
+
+# deploy requirements
+gunicorn
+psycopg2-binary
+whitenoise[brotli]
+sentry-sdk[django]
+dj-database-url
