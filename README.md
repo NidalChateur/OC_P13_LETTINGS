@@ -4,9 +4,9 @@
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Flake8](https://img.shields.io/badge/linting-flake8-yellowgreen.svg?logo=python)](https://github.com/pycqa/flake8)
 [![Pylint](https://img.shields.io/badge/linting-pylint-yellowgreen.svg?logo=python)](https://github.com/pylint-dev/pylint)
-[![Codecov](https://codecov.io/gh/NidalChateur/new_test_p13/graph/badge.svg?token=0NAIURXDSL)](https://codecov.io/gh/NidalChateur/new_test_p13)
-[![Codacy](https://app.codacy.com/project/badge/Grade/8c5fd6f292da4f96b65080520cf5f194)](https://app.codacy.com/gh/NidalChateur/new_test_p13/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/NidalChateur/new_test_p13/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/NidalChateur/new_test_p13/tree/main)
+[![codecov](https://codecov.io/gh/NidalChateur/OC_P13_LETTINGS/graph/badge.svg?token=6HKLEQ2T9G)](https://codecov.io/gh/NidalChateur/OC_P13_LETTINGS)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c8e5ed7215db4f5894baebb12f41f867)](https://app.codacy.com/gh/NidalChateur/OC_P13_LETTINGS/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/NidalChateur/OC_P13_LETTINGS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/NidalChateur/OC_P13_LETTINGS/tree/main)
 [![Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=docker)](https://hub.docker.com/repository/docker/nidalchateur/oc_lettings_site/general)
 
 #
