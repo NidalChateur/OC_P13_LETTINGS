@@ -1,0 +1,14 @@
+Getting started
+===============
+
+   Overhaul of the modular architecture in the `GitHub repository <https://github.com/NidalChateur/OC_P13_LETTINGS>`_  
+
+      1. Addressing various technical debts in the project  
+
+      2. `Dockerize <https://hub.docker.com/repository/docker/nidalchateur/oc_lettings_site/general>`_  
+
+      3. Implementation of a CI/CD pipeline using `CircleCI <https://app.circleci.com/pipelines/github/NidalChateur/OC_P13_LETTINGS>`_ and deployment on `Render <https://render.com/>`_  
+
+      4. Monitoring the application and tracking errors through `Sentry <https://sentry.io/>`_  
+
+      5. Creation of the technical documentation for the application using `Read The Docs <https://about.readthedocs.com/>`_ and `Sphinx <https://github.com/sphinx-doc/sphinx>`_  
