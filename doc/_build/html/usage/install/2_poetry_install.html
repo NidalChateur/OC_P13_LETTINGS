@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Local install with poetry and run (recommended) &#8212; Documentation oc_lettings_site 0.1.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=897fae25"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="3. Docker" href="../3_docker.html" />
+    <link rel="prev" title="Local install with pip and run" href="1_pip_install.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../3_docker.html" title="3. Docker"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="1_pip_install.html" title="Local install with pip and run"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../2_install.html" accesskey="U">2. Install and local run</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Local install with poetry and run (recommended)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="local-install-with-poetry-and-run-recommended">
+<h1>Local install with poetry and run (recommended)<a class="headerlink" href="#local-install-with-poetry-and-run-recommended" title="Link to this heading">¶</a></h1>
+<section id="install-and-run">
+<h2>Install and run<a class="headerlink" href="#install-and-run" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p><strong>1. Clone the repository</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NidalChateur/OC_P13_LETTINGS
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>OC_P13_LETTINGS
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>2. Set up a virtual environment</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>env
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>3. Activate virtual environment</strong></p>
+<blockquote>
+<div><ul>
+<li><dl>
+<dt>Windows</dt><dd><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>env/scripts/activate
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Unix/MacOS</dt><dd><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>env/bin/activate
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>4. Install dependencies</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">pip</span><span class="o">==</span><span class="m">23</span>.3.2
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">poetry</span><span class="o">==</span><span class="m">1</span>.7.1
+<span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>5. Run</strong></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>When the server is running, the application can be accessed from the URL [<a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>].</p>
+<p>Steps 1, 2, and 4 are only required for the initial installation. For subsequent launches of the application server, simply execute steps 3 and 5 from the project’s root directory.</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="flake8-linting">
+<h2>Flake8 linting<a class="headerlink" href="#flake8-linting" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>Flake8 is commonly used to check adherence to Python PEP 8 style conventions in code. To do this, navigate to the project’s root directory and run the following commands in the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>flake8
+</pre></div>
+</div>
+<p>An error report in HTML format will then be available in the “flake8_html_report” directory.</p>
+</div></blockquote>
+</section>
+<section id="pytest-coverage">
+<h2>Pytest coverage<a class="headerlink" href="#pytest-coverage" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>The test coverage checks the percentage of lines covered by tests.</p>
+<p>To achieve this, navigate to the project’s root directory and run the following commands in the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>.<span class="w"> </span>--cov-report<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Once the script is complete, you will find that a new folder called “htmlcov” has been created where you executed the command.</p>
+<p>Open the « htmlcov/index.html » file.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Local install with poetry and run (recommended)</a><ul>
+<li><a class="reference internal" href="#install-and-run">Install and run</a></li>
+<li><a class="reference internal" href="#flake8-linting">Flake8 linting</a></li>
+<li><a class="reference internal" href="#pytest-coverage">Pytest coverage</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="1_pip_install.html"
+                          title="Chapitre précédent">Local install with pip and run</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="../3_docker.html"
+                          title="Chapitre suivant">3. Docker</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/usage/install/2_poetry_install.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../3_docker.html" title="3. Docker"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="1_pip_install.html" title="Local install with pip and run"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../2_install.html" >2. Install and local run</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Local install with poetry and run (recommended)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Nidal Chateur.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

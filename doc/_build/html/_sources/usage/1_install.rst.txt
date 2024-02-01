@@ -1,0 +1,32 @@
+1. Install and local run
+=========================
+
+Prerequisite
+-------------
+
+   1. Install `Python and pip <https://www.python.org/downloads/>`_
+
+      .. code-block:: console
+
+         $ python --version
+         Python 3.10.11
+
+      .. code-block:: console
+
+         $ pip --version
+         pip 23.3.2
+   
+   2. Install `git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+
+      .. code-block:: console
+
+         $ git --version
+         git version 2.39.1.windows.1
+
+
+
+   .. toctree::
+      :maxdepth: 2
+
+      1_install/1_pip_install
+      1_install/2_poetry_install

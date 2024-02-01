@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Context &#8212; Documentation oc_lettings_site 0.1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=601dbdee" />
+    <script src="../_static/documentation_options.js?v=897fae25"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="1. Getting started" href="1_getting_started.html" />
+    <link rel="prev" title="Welcome to OC Lettings Site’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="1_getting_started.html" title="1. Getting started"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to OC Lettings Site’s documentation!"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Context</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="context">
+<h1>Context<a class="headerlink" href="#context" title="Link to this heading">¶</a></h1>
+<section id="specifications">
+<h2>1. Specifications<a class="headerlink" href="#specifications" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/NidalChateur/OC_P13_LETTINGS/mission/cahierdescharges.pdf">App specifications</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NidalChateur/OC_P13_LETTINGS/mission/readthedocs.pdf">Doc specifications</a></p></li>
+</ul>
+</section>
+<section id="project-description">
+<h2>2. Project description<a class="headerlink" href="#project-description" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>Overhaul of the modular architecture in the <a class="reference external" href="https://github.com/NidalChateur/OC_P13_LETTINGS">GitHub repository</a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Addressing various technical debts in the project</p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/repository/docker/nidalchateur/oc_lettings_site/general">Dockerize</a></p></li>
+<li><p>Implementation of a CI/CD pipeline using <a class="reference external" href="https://app.circleci.com/pipelines/github/NidalChateur/OC_P13_LETTINGS">CircleCI</a> and deployment on <a class="reference external" href="https://render.com/">Render</a></p></li>
+<li><p>Monitoring the application and tracking errors through <a class="reference external" href="https://sentry.io/">Sentry</a></p></li>
+<li><p>Creation of the technical documentation for the application using <a class="reference external" href="https://about.readthedocs.com/">Read The Docs</a> and <a class="reference external" href="https://github.com/sphinx-doc/sphinx">Sphinx</a></p></li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="system-configuration">
+<h2>3. System Configuration<a class="headerlink" href="#system-configuration" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Windows 11</p></li>
+<li><p>Visual Studio Code 1.85.2</p></li>
+<li><p>Powershell</p></li>
+<li><p>Python 3.10.11</p></li>
+<li><p>pip 23.3.2</p></li>
+</ul>
+</section>
+<section id="development-packages">
+<h2>4. Development packages<a class="headerlink" href="#development-packages" title="Link to this heading">¶</a></h2>
+<p>During local development, we use <strong>oc_lettings_site/settings/local.py</strong>
+(no environment variable)</p>
+<ul class="simple">
+<li><p>poetry 1.7.1</p></li>
+<li><p>django 5.0.1</p></li>
+<li><p>django-maintenance-mode==0.21.1</p></li>
+</ul>
+</section>
+<section id="test-packages">
+<h2>5. Test packages<a class="headerlink" href="#test-packages" title="Link to this heading">¶</a></h2>
+<p>During tests, we also use <strong>oc_lettings_site/settings/local.py</strong>
+(no environment variable for local tests)</p>
+<dl class="simple">
+<dt>Circleci environment variables:</dt><dd><ul class="simple">
+<li><p><strong>DOCKERHUB_USERNAME</strong> (acquired from Docker hub)</p></li>
+<li><p><strong>DOCKERHUB_PASSWORD</strong> (acquired from Docker hub)</p></li>
+<li><p><strong>RENDER_DEPLOY_HOOK_URL</strong> (acquired from Render)</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>pytest 8.0.0</p></li>
+<li><p>pytest-cov 4.1.0</p></li>
+<li><p>pytest-django 4.8.0</p></li>
+<li><p>flake8 7.0.0</p></li>
+<li><p>flake8-html 0.4.3</p></li>
+</ul>
+</section>
+<section id="production-packages">
+<h2>6. Production packages<a class="headerlink" href="#production-packages" title="Link to this heading">¶</a></h2>
+<p>During production, we use <strong>oc_lettings_site/settings/production.py</strong></p>
+<dl class="simple">
+<dt>Render environment variables:</dt><dd><ul class="simple">
+<li><p><strong>SECRET_KEY</strong> (generated on Render),</p></li>
+<li><p><strong>PYTHON_VERSION=3.10.11</strong></p></li>
+<li><p><strong>DJANGO_SETTINGS_MODULE=oc_lettings_site.settings.production</strong></p></li>
+<li><p><strong>DATABASE_URL</strong> (acquired from Render)</p></li>
+<li><p><strong>SENTRY_DSN</strong> (acquired from Sentry)</p></li>
+<li><p><strong>ADMIN_PASSWORD</strong> (chosen on Render)</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>gunicorn 21.2.0</p></li>
+<li><p>psycopg2-binary 2.9.9</p></li>
+<li><p>whitenoise[brotli] 6.6.0</p></li>
+<li><p>sentry-sdk[django] 1.40.0</p></li>
+<li><p>dj-database-url 2.1.0</p></li>
+</ul>
+</section>
+<section id="database-models">
+<h2>7. Database models<a class="headerlink" href="#database-models" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">class</span> <span class="pre">Address(models.Model):</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">number</span> <span class="pre">=</span> <span class="pre">models.PositiveIntegerField(validators=[MaxValueValidator(9999)])</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">street</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=64)</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">city</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=64)</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">state</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=2,</span> <span class="pre">validators=[MinLengthValidator(2)])</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">zip_code</span> <span class="pre">=</span> <span class="pre">models.PositiveIntegerField(validators=[MaxValueValidator(99999)])</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">country_iso_code</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=3,</span> <span class="pre">validators=[MinLengthValidator(3)])</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">class</span> <span class="pre">Letting(models.Model):</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">title</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=256)</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">address</span> <span class="pre">=</span> <span class="pre">models.OneToOneField(Address,</span> <span class="pre">on_delete=models.CASCADE)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">class</span> <span class="pre">Profile(models.Model):</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">user</span> <span class="pre">=</span> <span class="pre">models.OneToOneField(User,</span> <span class="pre">on_delete=models.CASCADE)</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">-</span> <span class="pre">favorite_city</span> <span class="pre">=</span> <span class="pre">models.CharField(max_length=64,</span> <span class="pre">blank=True)</span></span></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Context</a><ul>
+<li><a class="reference internal" href="#specifications">1. Specifications</a></li>
+<li><a class="reference internal" href="#project-description">2. Project description</a></li>
+<li><a class="reference internal" href="#system-configuration">3. System Configuration</a></li>
+<li><a class="reference internal" href="#development-packages">4. Development packages</a></li>
+<li><a class="reference internal" href="#test-packages">5. Test packages</a></li>
+<li><a class="reference internal" href="#production-packages">6. Production packages</a></li>
+<li><a class="reference internal" href="#database-models">7. Database models</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="../index.html"
+                          title="Chapitre précédent">Welcome to OC Lettings Site’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="1_getting_started.html"
+                          title="Chapitre suivant">1. Getting started</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/usage/0_context.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="1_getting_started.html" title="1. Getting started"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to OC Lettings Site’s documentation!"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation oc_lettings_site 0.1.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Context</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Nidal Chateur.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

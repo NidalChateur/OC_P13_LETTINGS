@@ -6,10 +6,10 @@
 [![Pylint](https://img.shields.io/badge/linting-pylint-yellowgreen.svg?logo=python)](https://github.com/pylint-dev/pylint)
 [![codecov](https://codecov.io/gh/NidalChateur/OC_P13_LETTINGS/graph/badge.svg?token=6HKLEQ2T9G)](https://codecov.io/gh/NidalChateur/OC_P13_LETTINGS)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c8e5ed7215db4f5894baebb12f41f867)](https://app.codacy.com/gh/NidalChateur/OC_P13_LETTINGS/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/NidalChateur/OC_P13_LETTINGS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/NidalChateur/OC_P13_LETTINGS/tree/main)
-[![Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=docker)](https://hub.docker.com/repository/docker/nidalchateur/oc_lettings_site/general)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/NidalChateur/OC_P13_LETTINGS/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/NidalChateur/OC_P13_LETTINGS/tree/main)
+[![Docker](https://img.shields.io/badge/dockerhub-images-important.svg?logo=docker)](https://hub.docker.com/r/nidalchateur/oc_lettings_site)
 
-#
+# CI/CD Pipeline : OC LETTINGS SITE
 
 <p align="center">
   <img src="./home/static/assets/img/icon.png" alt="icon">
