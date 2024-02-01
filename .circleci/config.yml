@@ -1,0 +1,95 @@
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@3.2.4
+  
+jobs:
+  test:
+
+    docker:
+      - image: cimg/python:3.10.11
+    
+    steps: 
+      - checkout
+
+      - run: 
+          name: Install dependencies
+          command: |
+            python -m pip install pip==23.3.2
+            pip install poetry==1.7.1
+            poetry install
+
+      - run: 
+          name: Apply migrations
+          command: |
+            poetry run python manage.py makemigrations
+            poetry run python manage.py migrate
+
+      - run:
+          name: Flake8
+          command: |
+            poetry run flake8
+
+      - run:
+          name: Pytest
+          command: |
+            poetry run pytest --cov=. --cov-report=xml --cov-fail-under=80
+
+      - codecov/upload
+
+  build:
+
+    docker:
+
+      - image: cimg/base:2022.09
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+
+    steps:
+      - checkout
+
+      # avoid Docker-in-Docker problem
+      - setup_remote_docker
+      
+      - run:
+          name: Build and Push the Docker image
+          command: |
+            COMMIT_HASH=$(git rev-parse HEAD)
+
+            docker build -t $DOCKERHUB_USERNAME/oc_lettings_site:$COMMIT_HASH .
+            docker tag $DOCKERHUB_USERNAME/oc_lettings_site:$COMMIT_HASH $DOCKERHUB_USERNAME/oc_lettings_site:latest
+
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+
+            docker push $DOCKERHUB_USERNAME/oc_lettings_site:$COMMIT_HASH
+            docker push $DOCKERHUB_USERNAME/oc_lettings_site:latest
+
+  deploy:
+    docker:
+      - image: cimg/base:2022.09
+    steps:
+      - checkout
+      - run:
+          name: Deploy the Docker image to Render
+          command: |
+            curl "$RENDER_DEPLOY_HOOK_URL"
+
+workflows:
+  run_ci_cd_pipeline:
+    jobs:
+      - test
+      - build: 
+          requires: 
+            - test
+          filters:
+            branches:
+              only:
+                - main
+      - deploy: 
+          requires: 
+            - build
+          filters:
+            branches:
+              only:
+                - main
